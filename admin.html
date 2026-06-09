@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>এডমিন ড্যাশবোর্ড - ফ্রেশ আম</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/styles/main.css">
+    <link rel="stylesheet" href="./src/styles/admin.css">
+</head>
+<body>
+    <nav class="navbar glass-effect">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">🥭 ফ্রেশ <span>আম</span> - এডমিন</a>
+            <div class="admin-stats">
+                মোট অর্ডার: <span id="totalOrdersCount">০</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="admin-main container">
+        <header class="admin-header">
+            <h1>অর্ডার <span>ম্যানেজমেন্ট</span></h1>
+            <button id="refreshOrdersBtn" class="btn btn-primary">রিফ্রেশ করুন</button>
+        </header>
+
+        <div class="admin-content card glass-effect">
+            <div class="table-container">
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th>অর্ডার আইডি</th>
+                            <th>কাস্টমার তথ্য</th>
+                            <th>অর্ডার করা আম</th>
+                            <th>মোট টাকা</th>
+                            <th>সময়</th>
+                            <th>অ্যাকশন</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ordersTableBody">
+                        <tr>
+                            <td colspan="6" class="loading-msg">অর্ডার লোড হচ্ছে...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="./src/scripts/admin.js"></script>
+</body>
+</html>

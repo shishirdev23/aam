@@ -1,0 +1,140 @@
+.admin-main {
+    padding-top: 120px;
+    padding-bottom: 60px;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.admin-header h1 {
+    font-size: 36px;
+    font-weight: 800;
+}
+
+.admin-header h1 span {
+    color: var(--primary-dark);
+}
+
+.admin-stats {
+    background: var(--primary-dark);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.admin-content {
+    border-radius: 24px;
+    padding: 30px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.orders-table th {
+    padding: 15px;
+    border-bottom: 2px solid rgba(0,0,0,0.05);
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+.orders-table td {
+    padding: 20px 15px;
+    border-bottom: 1px solid rgba(0,0,0,0.03);
+    vertical-align: top;
+}
+
+.customer-cell h4 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.customer-cell p {
+    font-size: 13px;
+    color: var(--text-light);
+    line-height: 1.4;
+}
+
+.items-list {
+    list-style: none;
+    font-size: 13px;
+}
+
+.items-list li {
+    margin-bottom: 4px;
+    background: rgba(0,0,0,0.03);
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.order-total {
+    font-weight: 800;
+    color: var(--primary-dark);
+}
+
+.order-id {
+    font-family: monospace;
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+.order-date {
+    font-size: 13px;
+    color: var(--text-light);
+}
+
+.loading-msg, .error-msg {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-light);
+}
+
+.error-msg {
+    color: #e53935;
+}
+
+.price-breakdown p {
+    font-size: 12px;
+    color: var(--text-light);
+    margin-bottom: 2px;
+}
+
+.badge-payment {
+    background: #e3f2fd;
+    color: #1976d2;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.badge-status {
+    background: #fff8e1;
+    color: #ffa000;
+    padding: 4px 10px;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 700;
+    text-align: center;
+    border: 1px solid #ffe082;
+}
+
+@media (max-width: 768px) {
+    .admin-header {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}

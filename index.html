@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ফ্রেশ আম - প্রিমিয়াম ম্যাংগো স্টোর</title>
+
+  <!-- Google Fonts: Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="/src/styles/main.css" />
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar glass-effect">
+    <div class="container nav-content">
+      <a href="#" class="logo">🥭 ফ্রেশ <span>আম</span></a>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">হোম</a></li>
+        <li><a href="#products">আমের ধরন</a></li>
+        <li><a href="#about">আমাদের সম্পর্কে</a></li>
+      </ul>
+      <a href="checkout.html" class="cart-btn" id="cartToggleBtn">
+        🛒 কার্ট <span class="cart-count">0</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <section id="home" class="hero-section">
+      <div class="container hero-content hero-centered">
+        <div class="hero-text">
+          <h1 class="text-white">সরাসরি বাগান থেকে <br><span class="highlight">ফ্রেশ এবং মিষ্টি আম</span></h1>
+          <p class="text-white-light">১০০% ফরমালিন মুক্ত, নির্ভেজাল রাজশাহীর আম এখন আপনার দোরগোড়ায়। আজই অর্ডার করুন এবং উপভোগ করুন খাঁটি আমের স্বাদ!</p>
+          <div class="hero-btns center-btns">
+            <a href="#products" class="btn btn-primary">আম কিনুন</a>
+            <a href="#about" class="btn btn-secondary">আমাদের সম্পর্কে</a>
+          </div>
+          <div class="trust-badges center-badges">
+            <div class="trust-badge badge-dark">✅ ১০০% কেমিক্যাল মুক্ত</div>
+            <div class="trust-badge badge-dark">🌳 সরাসরি বাগান থেকে</div>
+            <div class="trust-badge badge-dark">🚚 ক্যাশ অন ডেলিভারি</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Quiz Section -->
+    <section class="quiz-section">
+      <div class="container quiz-container">
+        <h2 class="quiz-title">আপনার জন্য <span>কোন আমটি সেরা?</span></h2>
+        <div class="quiz-options">
+          <button class="quiz-btn" id="quizSweetBtn">আমি প্রচণ্ড মিষ্টি আম পছন্দ করি</button>
+          <button class="quiz-btn" id="quizSourBtn">আমি হালকা টক-মিষ্টি পছন্দ করি</button>
+        </div>
+        <div class="quiz-result" id="quizResult">
+          <h3 id="resultTitle"></h3>
+          <p id="resultText"></p>
+          <a href="#products" class="btn btn-primary" onclick="document.getElementById('products').scrollIntoView();">এখনই অর্ডার করুন</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section section-padding">
+      <div class="container">
+        <div class="section-title">
+          <h2>আমাদের <span class="highlight">জনপ্রিয় আম</span></h2>
+          <p>সরাসরি বাগান থেকে বাছাই করা সেরা মানের আমগুলো দেখে নিন</p>
+        </div>
+
+        <div class="product-grid">
+          <!-- Product Card 1 -->
+          <div class="product-card glass-effect">
+            <div class="live-status-badge">
+              <span class="status-dot"></span> খাওয়ার প্রস্তুত
+            </div>
+            <div class="product-image">
+              <img src="./src/assets/images/himsagar-real.jpg" alt="হিমসাগর আম">
+            </div>
+            <div class="product-info">
+              <h3>হিমসাগর আম</h3>
+              <p class="desc">মিষ্টি ও সুস্বাদু, পাতলা চামড়া</p>
+              <div class="product-bottom">
+                <span class="price">৳১২০ <span>/ কেজি</span></span>
+                <select class="weight-dropdown" id="weight-1">
+                  <option value="1">১ কেজি</option>
+                  <option value="2">২ কেজি</option>
+                  <option value="5">৫ কেজি</option>
+                  <option value="10">১০ কেজি</option>
+                  <option value="20">২০ কেজি</option>
+                </select>
+              </div>
+              <div class="product-actions">
+                <button class="order-now-btn btn-primary" data-id="1" data-name="হিমসাগর" data-price="120" style="width: 100%;">
+                  অর্ডার করুন
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Card 2 -->
+          <div class="product-card glass-effect">
+            <div class="live-status-badge">
+              <span class="status-dot waiting"></span> পাড়া হবে: <span class="countdown-timer">৩ দিন পর</span>
+            </div>
+            <div class="product-image">
+              <img src="./src/assets/images/langra-real.png" alt="ল্যাংড়া আম">
+            </div>
+            <div class="product-info">
+              <h3>ল্যাংড়া আম</h3>
+              <p class="desc">অতুলনীয় ঘ্রাণ ও স্বাদ</p>
+              <div class="product-bottom">
+                <span class="price">৳১৩০ <span>/ কেজি</span></span>
+                <select class="weight-dropdown" id="weight-2">
+                  <option value="1">১ কেজি</option>
+                  <option value="2">২ কেজি</option>
+                  <option value="5">৫ কেজি</option>
+                  <option value="10">১০ কেজি</option>
+                  <option value="20">২০ কেজি</option>
+                </select>
+              </div>
+              <div class="product-actions">
+                <button class="order-now-btn btn-primary" data-id="2" data-name="ল্যাংড়া" data-price="130" style="width: 100%;">
+                  অর্ডার করুন
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Card 3 -->
+          <div class="product-card glass-effect">
+            <div class="live-status-badge">
+              <span class="status-dot"></span> পুরোপুরি পেকেছে
+            </div>
+            <div class="product-image">
+              <img src="./src/assets/images/amrapali-real.jpg" alt="আম্রপালি">
+            </div>
+            <div class="product-info">
+              <h3>আম্রপালি</h3>
+              <p class="desc">গাঢ় কমলা রঙ, প্রচণ্ড মিষ্টি</p>
+              <div class="product-bottom">
+                <span class="price">৳১১০ <span>/ কেজি</span></span>
+                <select class="weight-dropdown" id="weight-3">
+                  <option value="1">১ কেজি</option>
+                  <option value="2">২ কেজি</option>
+                  <option value="5">৫ কেজি</option>
+                  <option value="10">১০ কেজি</option>
+                  <option value="20">২০ কেজি</option>
+                </select>
+              </div>
+              <div class="product-actions">
+                <button class="order-now-btn btn-primary" data-id="3" data-name="আম্রপালি" data-price="110" style="width: 100%;">
+                  অর্ডার করুন
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Diabetic Friendly Section -->
+    <section class="diabetic-section section-padding">
+      <div class="container">
+        <div class="section-title">
+          <h2>ডায়াবেটিস রোগীদের জন্য <span class="highlight" style="color: #2E7D32;">স্পেশাল</span></h2>
+          <p>স্বাস্থ্য সচেতনদের জন্য কম মিষ্টি ও ফাইবারযুক্ত (আঁশযুক্ত) বাছাই করা আম</p>
+        </div>
+
+        <div class="health-disclaimer">
+          <div class="disclaimer-icon">🩺</div>
+          <div class="disclaimer-content">
+            <h3>ডায়াবেটিস রোগীদের জন্য আম খাওয়ার নিয়ম</h3>
+            <ul>
+              <li><strong>পরিমাণ:</strong> দিনে একটি মাঝারি আমের এক-তৃতীয়াংশ (১০০ গ্রামের বেশি নয়) খাবেন।</li>
+              <li><strong>খাওয়ার সময়:</strong> রাতে না খেয়ে, সকাল বা দুপুরের দিকে খাওয়া ভালো।</li>
+              <li><strong>জুস নয়:</strong> আমের জুস না খেয়ে সবসময় আস্ত আম চিবিয়ে খাবেন, এতে ফাইবার পুরোটা পাওয়া যায়।</li>
+            </ul>
+            <p style="margin-top: 10px; font-size: 14px; color: var(--text-light);"><em>(অবশ্যই আপনার চিকিৎসকের পরামর্শ মেনে চলবেন)</em></p>
+          </div>
+        </div>
+
+        <div class="product-grid">
+          <!-- Diabetic Card 1 -->
+          <div class="product-card diabetic-card glass-effect">
+            <div class="health-tags">
+              <span class="health-tag">🟢 সুগার: কম</span>
+            </div>
+            <div class="product-image">
+              <img src="./src/assets/images/placeholder.jpg" alt="ফজলি আম" style="opacity: 0.8;">
+            </div>
+            <div class="product-info">
+              <h3>ফজলি আম</h3>
+              <p class="desc">আকারে বড়, মিষ্টতা তুলনামূলকভাবে কম</p>
+              <div class="product-bottom">
+                <span class="price">৳৮০ <span>/ কেজি</span></span>
+                <select class="weight-dropdown" id="weight-4">
+                  <option value="1">১ কেজি</option>
+                  <option value="2">২ কেজি</option>
+                  <option value="5">৫ কেজি</option>
+                  <option value="10">১০ কেজি</option>
+                  <option value="20">২০ কেজি</option>
+                </select>
+              </div>
+              <div class="product-actions">
+                <button class="order-now-btn btn-primary" data-id="4" data-name="ফজলি আম" data-price="80" style="width: 100%;">অর্ডার করুন</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Diabetic Card 2 -->
+          <div class="product-card diabetic-card glass-effect">
+            <div class="health-tags">
+              <span class="health-tag">🟢 টক-মিষ্টি স্বাদ</span>
+            </div>
+            <div class="product-image">
+              <img src="./src/assets/images/placeholder.jpg" alt="আশ্বিনা আম" style="opacity: 0.8;">
+            </div>
+            <div class="product-info">
+              <h3>আশ্বিনা আম</h3>
+              <p class="desc">সিজনের শেষের আম, হালকা টক-মিষ্টি</p>
+              <div class="product-bottom">
+                <span class="price">৳৯০ <span>/ কেজি</span></span>
+                <select class="weight-dropdown" id="weight-5">
+                  <option value="1">১ কেজি</option>
+                  <option value="2">২ কেজি</option>
+                  <option value="5">৫ কেজি</option>
+                  <option value="10">১০ কেজি</option>
+                  <option value="20">২০ কেজি</option>
+                </select>
+              </div>
+              <div class="product-actions">
+                <button class="order-now-btn btn-primary" data-id="5" data-name="আশ্বিনা আম" data-price="90" style="width: 100%;">অর্ডার করুন</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Diabetic Card 3 -->
+          <div class="product-card diabetic-card glass-effect">
+            <div class="health-tags">
+              <span class="health-tag">🟢 গ্লাইসেমিক ইনডেক্স: মাঝারি</span>
+            </div>
+            <div class="product-image">
+              <img src="./src/assets/images/placeholder.jpg" alt="লখনা আম" style="opacity: 0.8;">
+            </div>
+            <div class="product-info">
+              <h3>লখনা আম</h3>
+              <p class="desc">মিষ্টি কম, ডায়াবেটিস রোগীদের জন্য ভালো</p>
+              <div class="product-bottom">
+                <span class="price">৳৭০ <span>/ কেজি</span></span>
+                <select class="weight-dropdown" id="weight-6">
+                  <option value="1">১ কেজি</option>
+                  <option value="2">২ কেজি</option>
+                  <option value="5">৫ কেজি</option>
+                  <option value="10">১০ কেজি</option>
+                  <option value="20">২০ কেজি</option>
+                </select>
+              </div>
+              <div class="product-actions">
+                <button class="order-now-btn btn-primary" data-id="6" data-name="লখনা আম" data-price="70" style="width: 100%;">অর্ডার করুন</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Diabetic Card 4 -->
+          <div class="product-card diabetic-card glass-effect">
+            <div class="health-tags">
+              <span class="health-tag">🟢 প্রচুর আঁশযুক্ত (High Fiber)</span>
+            </div>
+            <div class="product-image">
+              <img src="./src/assets/images/placeholder.jpg" alt="দেশি গুটি আম" style="opacity: 0.8;">
+            </div>
+            <div class="product-info">
+              <h3>দেশি গুটি আম</h3>
+              <p class="desc">ফাইবার বেশি থাকায় সুগার দ্রুত বাড়ে না</p>
+              <div class="product-bottom">
+                <span class="price">৳৬০ <span>/ কেজি</span></span>
+                <select class="weight-dropdown" id="weight-7">
+                  <option value="1">১ কেজি</option>
+                  <option value="2">২ কেজি</option>
+                  <option value="5">৫ কেজি</option>
+                  <option value="10">১০ কেজি</option>
+                  <option value="20">২০ কেজি</option>
+                </select>
+              </div>
+              <div class="product-actions">
+                <button class="order-now-btn btn-primary" data-id="7" data-name="দেশি গুটি আম" data-price="60" style="width: 100%;">অর্ডার করুন</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mango Calendar Section -->
+    <section id="calendar" class="container calendar-section">
+      <div class="section-title">
+        <h2>আমের <span class="highlight">ক্যালেন্ডার</span></h2>
+        <p>জেনে নিন কোন আমটি কখন গাছ থেকে পাড়া হবে এবং কবে ডেলিভারি পাবেন</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item active">
+          <div class="timeline-icon">📅</div>
+          <div class="timeline-content">
+            <h4>মে এর শেষ সপ্তাহ</h4>
+            <p>হিমসাগর (মিষ্টি ও সুগন্ধি)</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-icon">🕒</div>
+          <div class="timeline-content">
+            <h4>জুন এর প্রথম সপ্তাহ</h4>
+            <p>ল্যাংড়া (টক-মিষ্টি ও পাতলা আঁশ)</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-icon">⏳</div>
+          <div class="timeline-content">
+            <h4>জুন এর মাঝামাঝি</h4>
+            <p>আম্রপালি (প্রচণ্ড মিষ্টি ও গাঢ় কমলা)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Farm to Doorstep Section -->
+    <section id="process" class="process-section section-padding">
+      <div class="container">
+        <div class="section-title">
+          <h2>কেন আমাদের <span class="highlight">বেছে নেবেন?</span></h2>
+          <p>বাগান থেকে আপনার হাত পর্যন্ত আমাদের ১০০% স্বচ্ছ প্রক্রিয়া</p>
+        </div>
+        <div class="process-grid">
+          <div class="process-card glass-effect">
+            <div class="process-step-num">১</div>
+            <h3>বাগান থেকে পাড়া</h3>
+            <p>অর্ডার পাওয়ার পরই আমরা যত্ন সহকারে গাছ থেকে পরিপক্ব আম পাড়ি।</p>
+          </div>
+          <div class="process-card glass-effect">
+            <div class="process-step-num">২</div>
+            <h3>বাছাই ও প্যাকিং</h3>
+            <p>কেমিক্যালের ছোঁয়া ছাড়া, সেরা মানের আমগুলো বাছাই করে সুন্দর বক্সে প্যাক করা হয়।</p>
+          </div>
+          <div class="process-card glass-effect">
+            <div class="process-step-num">৩</div>
+            <h3>দ্রুত হোম ডেলিভারি</h3>
+            <p>প্যাকেজিং এর পর ২৪-৪৮ ঘণ্টার মধ্যে আম পৌঁছে যায় আপনার দোরগোড়ায়।</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="reviews" class="section-padding" style="background: rgba(255, 193, 7, 0.05);">
+      <div class="container">
+        <div class="section-title">
+          <h2>ক্রেতাদের <span class="highlight">মতামত</span></h2>
+          <p>আমাদের উপর যারা ভরসা রেখেছেন, তাদের অভিজ্ঞতা</p>
+        </div>
+        <div class="testimonials-grid">
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"এত মিষ্টি আর ফ্রেশ আম গত কয়েক বছরে খাইনি। একদম গাছপাকা স্বাদ, প্যাকেজিংটাও খুব চমৎকার ছিল।"</p>
+            <div class="reviewer">
+              <div class="reviewer-avatar">S</div>
+              <div class="reviewer-info">
+                <h5>শরিফুল ইসলাম</h5>
+                <span>ঢাকা, বাংলাদেশ</span>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"অর্ডার করার পরদিন সকালেই ডেলিভারি পেয়েছি। ওজনেও একদম ঠিক ছিল। পরের বার আবার অর্ডার করবো ইনশাআল্লাহ।"</p>
+            <div class="reviewer">
+              <div class="reviewer-avatar">A</div>
+              <div class="reviewer-info">
+                <h5>আরিফা খাতুন</h5>
+                <span>চট্টগ্রাম, বাংলাদেশ</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer section-padding" style="background: rgba(0,0,0,0.02); padding: 40px 0;">
+    <div class="container" style="text-align: center;">
+      <div class="logo" style="justify-content: center; margin-bottom: 20px;">🥭 ফ্রেশ <span>আম</span></div>
+      <p style="color: var(--text-light); margin-bottom: 20px;">১০০% খাঁটি ও ফরমালিন মুক্ত রাজশাহীর আমের বিশ্বস্ত প্রতিষ্ঠান।</p>
+      <div class="footer-links" style="display: flex; justify-content: center; gap: 30px; margin-bottom: 20px;">
+        <a href="#home" style="text-decoration: none; color: var(--text-dark); font-weight: 600;">হোম</a>
+        <a href="#products" style="text-decoration: none; color: var(--text-dark); font-weight: 600;">আমের ধরন</a>
+        <a href="admin.html" style="text-decoration: none; color: var(--text-light); font-size: 14px; opacity: 0.5;">Admin Access</a>
+      </div>
+      <p style="font-size: 14px; color: var(--text-light);">&copy; ২০২৪ ফ্রেশ আম। সর্বস্বত্ব সংরক্ষিত।</p>
+    </div>
+  </footer>
+
+  <!-- Floating Chat Widget -->
+  <div class="chat-widget-container" id="chatWidgetContainer">
+    <div class="chat-options">
+      <a href="tel:+8801700000000" class="chat-option-btn btn-call" data-tooltip="সরাসরি কল করুন">
+        <i class="icon-call"></i>
+      </a>
+      <a href="https://m.me/yourpage" target="_blank" class="chat-option-btn btn-messenger" data-tooltip="মেসেঞ্জারে চ্যাট">
+        <i class="icon-messenger"></i>
+      </a>
+      <a href="https://wa.me/8801700000000" target="_blank" class="chat-option-btn btn-whatsapp" data-tooltip="হোয়াটসঅ্যাপ চ্যাট">
+        <i class="icon-whatsapp"></i>
+      </a>
+    </div>
+    <button class="chat-main-btn" id="chatMainBtn">
+      <i class="icon-chat"></i>
+    </button>
+  </div>
+
+  <script type="module" src="/src/scripts/main.js"></script>
+</body>
+
+</html>

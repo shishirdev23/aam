@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>চেকআউট - ফ্রেশ আম</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="/src/styles/main.css" />
+  <style>
+    body {
+      background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+      padding-top: 100px; /* Space for navbar */
+    }
+
+    .checkout-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 40px;
+      margin-bottom: 80px;
+    }
+
+    .checkout-panel {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .checkout-panel h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: var(--text-dark);
+      border-bottom: 2px solid var(--bg-gradient-end);
+      padding-bottom: 10px;
+    }
+
+    /* Cart Items Styles */
+    .cart-items-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+    }
+
+    .cart-item:last-child {
+      border-bottom: none;
+    }
+
+    .cart-item-info h4 {
+      font-size: 18px;
+      margin-bottom: 5px;
+      color: var(--text-dark);
+    }
+
+    .cart-item-info p {
+      font-size: 15px;
+      color: var(--text-light);
+    }
+
+    .cart-item-price {
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--primary-dark);
+    }
+
+    .cart-item-remove {
+      background: none;
+      border: none;
+      color: #ff4757;
+      cursor: pointer;
+      font-size: 16px;
+      margin-left: 15px;
+      padding: 5px;
+    }
+
+    .empty-cart-message {
+      text-align: center;
+      color: var(--text-light);
+      padding: 40px 0;
+      font-size: 18px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    .summary-row.total {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 2px dashed rgba(0, 0, 0, 0.1);
+    }
+
+    /* Form Styles */
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-family: var(--font-family);
+      font-size: 15px;
+      outline: none;
+      transition: all 0.3s;
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+      border-color: var(--primary-dark);
+      box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.1);
+    }
+
+    .checkout-btn {
+      width: 100%;
+      font-size: 18px;
+      padding: 18px;
+      margin-top: 10px;
+    }
+
+    .back-to-shop {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .back-to-shop:hover {
+      color: var(--primary-dark);
+    }
+
+    @media (max-width: 992px) {
+      .checkout-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar glass-effect">
+    <div class="container nav-content">
+      <a href="index.html" class="logo">🥭 ফ্রেশ <span>আম</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">হোম</a></li>
+        <li><a href="index.html#products">আমের ধরন</a></li>
+      </ul>
+      <a href="checkout.html" class="cart-btn" id="cartToggleBtn">
+        🛒 কার্ট <span class="cart-count">0</span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <a href="index.html" class="back-to-shop">← কেনাকাটায় ফিরে যান</a>
+    
+    <div class="checkout-container">
+      <!-- Order Summary -->
+      <div class="checkout-panel">
+        <h2>আপনার অর্ডার 🛒</h2>
+        <div class="cart-items-list" id="checkoutItemsContainer">
+          <!-- Items injected by JS -->
+        </div>
+
+        <div class="cart-summary">
+          <div class="summary-row">
+            <span>সাবটোটাল:</span>
+            <span id="checkoutSubtotal">৳০</span>
+          </div>
+          <div class="summary-row">
+            <span>ডেলিভারি চার্জ:</span>
+            <span>৳১২০</span>
+          </div>
+          <div class="summary-row total">
+            <span>সর্বমোট:</span>
+            <span id="checkoutTotal">৳০</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Checkout Form -->
+      <div class="checkout-panel">
+        <h2>ডেলিভারি ঠিকানা (ক্যাশ অন ডেলিভারি) 🚚</h2>
+        <form id="checkoutOrderForm">
+          <div class="form-group">
+            <label for="customerName">আপনার নাম</label>
+            <input type="text" id="customerName" name="name" placeholder="সম্পূর্ণ নাম লিখুন" required>
+          </div>
+          <div class="form-group">
+            <label for="customerPhone">মোবাইল নম্বর</label>
+            <input type="tel" id="customerPhone" name="phone" placeholder="০১৭XXXXXXXX" required>
+          </div>
+          <div class="form-group">
+            <label for="customerAddress">পূর্ণাঙ্গ ঠিকানা</label>
+            <textarea id="customerAddress" name="address" rows="4" placeholder="গ্রাম/রাস্তা, ডাকঘর, থানা, জেলা" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary checkout-btn" id="confirmOrderBtn">
+            অর্ডার কনফার্ম করুন
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="/src/scripts/checkout.js"></script>
+</body>
+
+</html>

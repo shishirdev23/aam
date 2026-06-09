@@ -1,0 +1,222 @@
+/* User-Centric Sections Styles */
+
+/* 1. Trust Badges */
+.trust-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.trust-badge {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: var(--glass-blur);
+}
+
+/* 2. Mango Calendar */
+.calendar-section {
+  background: #fff;
+  border-radius: 30px;
+  padding: 60px 40px;
+  margin: 40px 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+}
+
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 40px;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #f0f0f0;
+  z-index: 1;
+}
+
+.timeline-item {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  flex: 1;
+  min-width: 150px;
+}
+
+.timeline-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--white);
+  border: 4px solid var(--primary-color);
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  box-shadow: 0 10px 20px rgba(255, 193, 7, 0.2);
+}
+
+.timeline-item.active .timeline-icon {
+  background: var(--primary-color);
+  color: white;
+}
+
+.timeline-content h4 {
+  font-size: 20px;
+  color: var(--text-dark);
+  margin-bottom: 5px;
+}
+
+.timeline-content p {
+  color: var(--text-light);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* 3. Farm to Doorstep Process */
+.process-section {
+  padding: 80px 0;
+  position: relative;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.process-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  padding: 40px 30px;
+  border-radius: 24px;
+  text-align: center;
+  backdrop-filter: var(--glass-blur);
+  
+  /* Initial Hidden State for Animation */
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Revealed State */
+.process-card.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Hover effect should only apply after reveal */
+.process-card.revealed:hover {
+  transform: translateY(-10px);
+  transition: transform 0.3s ease;
+}
+
+.process-step-num {
+  width: 50px;
+  height: 50px;
+  background: var(--primary-dark);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0 auto 20px;
+}
+
+.process-card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: var(--text-dark);
+}
+
+.process-card p {
+  color: var(--text-light);
+}
+
+/* 4. Testimonials */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.review-card {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.stars {
+  color: #FFB300;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.review-text {
+  font-size: 16px;
+  color: var(--text-light);
+  font-style: italic;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.reviewer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.reviewer-avatar {
+  width: 50px;
+  height: 50px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.reviewer-info h5 {
+  font-size: 16px;
+  color: var(--text-dark);
+}
+
+.reviewer-info span {
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    display: none;
+  }
+  .timeline {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
