@@ -241,7 +241,7 @@ body::after {
   display: flex;
   align-items: center;
   position: relative;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('../assets/images/hero-bg.png');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('../assets/images/hero-bg-hill.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

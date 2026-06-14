@@ -1,9 +1,9 @@
 /* Countdown & Live Status Styles */
 
 .live-status-badge {
-  position: absolute;
-  top: 15px;
-  left: 15px;
+  display: inline-flex;
+  align-self: flex-start;
+  margin-bottom: 15px;
   background: rgba(255, 255, 255, 0.9);
   padding: 6px 12px;
   border-radius: 20px;
@@ -11,7 +11,6 @@
   font-weight: 700;
   color: var(--text-dark);
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  display: flex;
   align-items: center;
   gap: 6px;
   z-index: 5;
