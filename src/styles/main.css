@@ -517,3 +517,6 @@ body::after {
   background: var(--primary-dark);
   color: var(--white);
 }
+
+/* Fix for numbers */
+.text-white-light, .trust-badge, .weight-dropdown, .price, .footer p { font-family: 'Noto Sans Bengali', sans-serif; }
