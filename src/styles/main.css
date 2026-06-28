@@ -165,6 +165,13 @@ body::after {
   letter-spacing: 0.5px;
 }
 
+.logo-img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  mix-blend-mode: lighten; /* Helps blend solid backgrounds */
+}
+
 .logo span {
   color: var(--white);
 }
