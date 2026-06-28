@@ -26,9 +26,9 @@ window.addEventListener('scroll', () => {
 const heroSection = document.querySelector('.hero-section');
 if (heroSection) {
   const bgImages = [
-    '/src/assets/images/hero-bg-1.jpg',
-    '/src/assets/images/hero-bg-2.jpg',
-    '/src/assets/images/hero-bg-3.jpg'
+    './src/assets/images/hero-bg-1.jpg',
+    './src/assets/images/hero-bg-2.jpg',
+    './src/assets/images/hero-bg-3.jpg'
   ];
   let currentBgIndex = 0;
   
