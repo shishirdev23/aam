@@ -139,11 +139,11 @@ body::after {
   border-radius: 0 0 20px 20px;
   border-top: none;
   transition: all 0.3s ease;
-  background: var(--primary-color);
+  background: var(--primary-dark);
 }
 
 .navbar.scrolled {
-  background: var(--primary-color);
+  background: var(--primary-dark);
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
