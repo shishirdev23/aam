@@ -139,11 +139,11 @@ body::after {
   border-radius: 0 0 20px 20px;
   border-top: none;
   transition: all 0.3s ease;
-  background: var(--primary-dark);
+  background: #03462D;
 }
 
 .navbar.scrolled {
-  background: var(--primary-dark);
+  background: #03462D;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
@@ -154,15 +154,15 @@ body::after {
 }
 
 .logo {
-  font-family: 'Baloo Da 2', sans-serif;
-  font-size: 34px;
-  font-weight: 700;
-  color: var(--white);
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 8px;
-  letter-spacing: 0.5px;
+}
+
+.logo-img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
 }
 
 .logo span {
