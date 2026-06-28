@@ -247,6 +247,7 @@ body::after {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  transition: background-image 0.5s ease-in-out;
 }
 
 .hero-content {

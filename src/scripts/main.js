@@ -21,3 +21,19 @@ window.addEventListener('scroll', () => {
 });
 
 // Cart logic moved to cart.js
+
+// Hero Background Slideshow
+const heroSection = document.querySelector('.hero-section');
+if (heroSection) {
+  const bgImages = [
+    '/src/assets/images/hero-bg-1.jpg',
+    '/src/assets/images/hero-bg-2.jpg',
+    '/src/assets/images/hero-bg-3.jpg'
+  ];
+  let currentBgIndex = 0;
+  
+  setInterval(() => {
+    currentBgIndex = (currentBgIndex + 1) % bgImages.length;
+    heroSection.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('${bgImages[currentBgIndex]}')`;
+  }, 1500);
+}
