@@ -7,13 +7,13 @@
 
 /* Base Variables & Typography */
 :root {
-  --primary-color: #FFC107; /* Mango Yellow */
-  --primary-dark: #FF9800; /* Orange */
-  --secondary-color: #2E7D32; /* Leaf Green */
-  --bg-gradient-start: #FFF8E1;
-  --bg-gradient-end: #FFECB3;
-  --text-dark: #333333;
-  --text-light: #555555;
+  --primary-color: #5E9C3C; /* Vibrant Leaf Green */
+  --primary-dark: #235020; /* Dark Green from Text */
+  --secondary-color: #E86C14; /* Papaya Orange */
+  --bg-gradient-start: #F7FAF5; /* Light natural background */
+  --bg-gradient-end: #E4EFE0; /* Soft green-tinted background */
+  --text-dark: #1D331A; /* Dark green-grey for text */
+  --text-light: #526650; /* Lighter text */
   --white: #FFFFFF;
   
   /* Glassmorphism */
@@ -328,7 +328,7 @@ body::after {
 .hero-mango-blob {
   width: 450px;
   height: 450px;
-  background: linear-gradient(135deg, rgba(255, 193, 7, 0.8) 0%, rgba(255, 87, 34, 0.8) 100%);
+  background: linear-gradient(135deg, rgba(232, 108, 20, 0.8) 0%, rgba(251, 192, 45, 0.8) 100%);
   border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
   animation: blob-bounce 8s infinite alternate ease-in-out;
   box-shadow: 0 20px 60px rgba(255, 152, 0, 0.2);
