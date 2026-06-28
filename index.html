@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/src/styles/main.css" />
+  <link rel="stylesheet" href="./src/styles/main.css" />
 </head>
 
 <body>
@@ -489,7 +489,34 @@
     </button>
   </div>
 
-  <script type="module" src="/src/scripts/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const heroSection = document.querySelector('.hero-section');
+      if (heroSection) {
+        const bgImages = [
+          './src/assets/images/hero-bg-1.jpg',
+          './src/assets/images/hero-bg-2.jpg',
+          './src/assets/images/hero-bg-3.jpg'
+        ];
+        let currentBgIndex = 0;
+        
+        // Preload images
+        bgImages.forEach(src => {
+          const img = new Image();
+          img.src = src;
+        });
+
+        // Initial background set
+        heroSection.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('${bgImages[currentBgIndex]}')`;
+        
+        setInterval(() => {
+          currentBgIndex = (currentBgIndex + 1) % bgImages.length;
+          heroSection.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('${bgImages[currentBgIndex]}')`;
+        }, 1500);
+      }
+    });
+  </script>
+  <script type="module" src="./src/scripts/main.js"></script>
 </body>
 
 </html>
