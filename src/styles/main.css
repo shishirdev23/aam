@@ -154,14 +154,15 @@ body::after {
 }
 
 .logo {
-  font-size: 28px;
-  font-weight: 800;
+  font-family: 'Galada', cursive;
+  font-size: 34px;
+  font-weight: normal;
   color: var(--white);
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 8px;
-  letter-spacing: -0.5px;
+  letter-spacing: 0.5px;
 }
 
 .logo span {
