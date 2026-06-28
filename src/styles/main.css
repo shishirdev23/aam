@@ -243,10 +243,25 @@ body::after {
   display: flex;
   align-items: center;
   position: relative;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('../assets/images/hero-bg-hill.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  animation: heroBgSlider 15s infinite;
+}
+
+@keyframes heroBgSlider {
+  0%, 25% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('../assets/images/hero-img-1.jpg');
+  }
+  33.33%, 58.33% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('../assets/images/hero-img-2.jpg');
+  }
+  66.66%, 91.66% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('../assets/images/hero-img-3.jpg');
+  }
+  100% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('../assets/images/hero-img-1.jpg');
+  }
 }
 
 .hero-content {
