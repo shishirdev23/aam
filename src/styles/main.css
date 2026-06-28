@@ -139,11 +139,12 @@ body::after {
   border-radius: 0 0 20px 20px;
   border-top: none;
   transition: all 0.3s ease;
+  background: var(--primary-color);
 }
 
 .navbar.scrolled {
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  background: var(--primary-color);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
 .nav-content {
@@ -155,7 +156,7 @@ body::after {
 .logo {
   font-size: 28px;
   font-weight: 800;
-  color: var(--text-dark);
+  color: var(--white);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -164,7 +165,7 @@ body::after {
 }
 
 .logo span {
-  color: var(--primary-dark);
+  color: var(--white);
 }
 
 .nav-links {
@@ -175,7 +176,7 @@ body::after {
 
 .nav-links a {
   text-decoration: none;
-  color: var(--text-dark);
+  color: var(--white);
   font-weight: 600;
   font-size: 16px;
   transition: color 0.3s ease;
@@ -187,7 +188,7 @@ body::after {
   position: absolute;
   width: 0;
   height: 2px;
-  background: var(--primary-dark);
+  background: var(--white);
   bottom: -4px;
   left: 0;
   transition: width 0.3s ease;
@@ -198,7 +199,7 @@ body::after {
 }
 
 .nav-links a:hover, .nav-links a.active {
-  color: var(--primary-dark);
+  color: var(--white);
 }
 
 .cart-btn {
