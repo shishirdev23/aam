@@ -160,7 +160,7 @@ body::after {
 }
 
 .logo-img {
-  height: 75px;
+  height: 60px;
   width: auto;
   object-fit: contain;
 }
@@ -184,20 +184,7 @@ body::after {
   position: relative;
 }
 
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  background: #FFD700;
-  bottom: -4px;
-  left: 0;
-  transition: width 0.3s ease;
-}
 
-.nav-links a:hover::after, .nav-links a.active::after {
-  width: 100%;
-}
 
 .nav-links a:hover, .nav-links a.active {
   color: #FFD700;
@@ -519,20 +506,23 @@ body::after {
 }
 
 .add-to-cart-btn {
-  background: var(--white);
-  color: var(--primary-dark);
-  border: 1px solid var(--primary-dark);
+  background: linear-gradient(135deg, #FFF176 0%, #FFC107 100%);
+  color: var(--text-dark);
+  border: none;
   padding: 8px 16px;
   border-radius: 50px;
-  font-weight: 600;
+  font-weight: 700;
   font-family: var(--font-family);
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 193, 7, 0.2);
 }
 
 .add-to-cart-btn:hover {
-  background: var(--primary-dark);
-  color: var(--white);
+  background: linear-gradient(135deg, #FFC107 0%, #FFB300 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(255, 193, 7, 0.4);
+  color: var(--text-dark);
 }
 
 /* Fix for numbers */
