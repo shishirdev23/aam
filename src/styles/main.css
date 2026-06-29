@@ -131,14 +131,12 @@ body::after {
 /* Navbar */
 .navbar {
   position: fixed;
-  top: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  max-width: 1200px;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
-  padding: 15px 20px;
-  border-radius: 12px;
+  padding: 15px 0;
+  border-radius: 0 0 20px 20px;
   border-top: none;
   transition: all 0.3s ease;
   background: #03462D;
