@@ -131,12 +131,14 @@ body::after {
 /* Navbar */
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
   z-index: 1000;
-  padding: 15px 0;
-  border-radius: 0 0 20px 20px;
+  padding: 15px 20px;
+  border-radius: 12px;
   border-top: none;
   transition: all 0.3s ease;
   background: #03462D;
@@ -319,6 +321,10 @@ body::after {
 .hero-btns {
   display: flex;
   gap: 20px;
+}
+
+.hero-btns .btn {
+  border-radius: 4px;
 }
 
 .hero-image-container {
@@ -523,6 +529,23 @@ body::after {
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(255, 193, 7, 0.4);
   color: var(--text-dark);
+}
+
+.order-now-btn.btn-primary {
+  background: linear-gradient(90deg, #FFB300 0%, #03462D 100%) !important;
+  color: #ffffff !important;
+  border-radius: 50px; /* Keep pill shape for order buttons or default */
+  padding: 10px 20px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.order-now-btn.btn-primary:hover {
+  background: linear-gradient(90deg, #FFA000 0%, #023320 100%) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 /* Fix for numbers */
