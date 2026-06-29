@@ -5,7 +5,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
-  margin-top: 80px; /* Moved down */
+  margin-top: 40px; /* Moved slightly up */
   width: 100%;
   justify-content: space-between !important;
 }

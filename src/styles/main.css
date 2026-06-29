@@ -160,7 +160,7 @@ body::after {
 }
 
 .logo-img {
-  height: 50px;
+  height: 75px;
   width: auto;
   object-fit: contain;
 }
@@ -177,7 +177,7 @@ body::after {
 
 .nav-links a {
   text-decoration: none;
-  color: var(--white);
+  color: #FFD700;
   font-weight: 600;
   font-size: 16px;
   transition: color 0.3s ease;
@@ -189,7 +189,7 @@ body::after {
   position: absolute;
   width: 0;
   height: 2px;
-  background: var(--white);
+  background: #FFD700;
   bottom: -4px;
   left: 0;
   transition: width 0.3s ease;
@@ -200,7 +200,7 @@ body::after {
 }
 
 .nav-links a:hover, .nav-links a.active {
-  color: var(--white);
+  color: #FFD700;
 }
 
 .cart-btn {
