@@ -119,9 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return response.json();
       })
       .then(data => {
-        alert('আপনার অর্ডারটি সফলভাবে গ্রহণ করা হয়েছে! অর্ডার আইডি: ' + data.orderId);
-        
-        // Clear cart
+        // Clear cart first
         localStorage.removeItem('mangoCart');
         cart = [];
         updateCartUI();
@@ -130,10 +128,11 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.textContent = originalText;
         btn.disabled = false;
         
-        // Redirect back home after a short delay
+        // Show alert using setTimeout so it doesn't block DOM updates
         setTimeout(() => {
+          alert('আপনার অর্ডারটি সফলভাবে গ্রহণ করা হয়েছে! অর্ডার আইডি: ' + data.orderId);
           window.location.href = 'index.html';
-        }, 1000);
+        }, 100);
       })
       .catch(error => {
         console.error('Error:', error);

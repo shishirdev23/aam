@@ -39,6 +39,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loginSubmitBtn.addEventListener('click', async () => {
         const password = adminPassword.value;
+        const originalText = loginSubmitBtn.textContent;
+        loginSubmitBtn.textContent = 'অপেক্ষা করুন...';
+        loginSubmitBtn.disabled = true;
+        
         try {
             const res = await fetch('https://mango-backend-api.onrender.com/api/admin/login', {
                 method: 'POST',
@@ -56,6 +60,9 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (err) {
             loginError.textContent = 'সার্ভার এরর!';
             loginError.style.display = 'block';
+        } finally {
+            loginSubmitBtn.textContent = originalText;
+            loginSubmitBtn.disabled = false;
         }
     });
 
