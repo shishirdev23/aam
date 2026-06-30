@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loginSubmitBtn.addEventListener('click', async () => {
         const password = adminPassword.value;
         try {
-            const res = await fetch('http://localhost:5000/api/admin/login', {
+            const res = await fetch('https://mango-backend-api.onrender.com/api/admin/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ password })
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ordersTableBody.innerHTML = '<tr><td colspan="6" class="loading-msg">অর্ডার লোড হচ্ছে...</td></tr>';
         
         try {
-            const response = await fetch('http://localhost:5000/api/orders');
+            const response = await fetch('https://mango-backend-api.onrender.com/api/orders');
             if (!response.ok) throw new Error('Failed to fetch orders');
             
             allOrders = await response.json();
@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 if (confirm('আপনি কি নিশ্চিত যে এই অর্ডারটি মুছে ফেলতে চান?')) {
                     try {
-                        const response = await fetch(`http://localhost:5000/api/orders/${id}`, { method: 'DELETE' });
+                        const response = await fetch(`https://mango-backend-api.onrender.com/api/orders/${id}`, { method: 'DELETE' });
                         const result = await response.json();
                         if (result.success) {
                             fetchOrders(); // Refresh table
@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const id = e.target.getAttribute('data-id');
                 const newStatus = e.target.value;
                 try {
-                    const response = await fetch(`http://localhost:5000/api/orders/${id}/status`, {
+                    const response = await fetch(`https://mango-backend-api.onrender.com/api/orders/${id}/status`, {
                         method: 'PUT',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ status: newStatus })

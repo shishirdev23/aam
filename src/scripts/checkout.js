@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
       };
 
       // Send order to backend
-      fetch('http://localhost:5000/api/orders', {
+      fetch('https://mango-backend-api.onrender.com/api/orders', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .catch(error => {
         console.error('Error:', error);
-        alert('অর্ডার সেভ করতে সমস্যা হয়েছে। দয়া করে নিশ্চিত করুন যে আপনার সার্ভারটি চালু আছে (http://localhost:5000)।');
+        alert('অর্ডার সেভ করতে সমস্যা হয়েছে। দয়া করে নিশ্চিত করুন যে আপনার সার্ভারটি চালু আছে (https://mango-backend-api.onrender.com)।');
         btn.textContent = originalText;
         btn.disabled = false;
       });
