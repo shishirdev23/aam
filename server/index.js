@@ -32,6 +32,16 @@ app.get('/', (req, res) => {
     res.send('Mango Store Server is running...');
 });
 
+// Admin Login
+app.post('/api/admin/login', (req, res) => {
+    const { password } = req.body;
+    if (password === '101202') {
+        res.json({ success: true, token: 'admin-token-101202' });
+    } else {
+        res.status(401).json({ success: false, error: 'ভুল পাসওয়ার্ড!' });
+    }
+});
+
 // Get all orders (for Admin)
 app.get('/api/orders', async (req, res) => {
     try {
@@ -48,6 +58,7 @@ app.post('/api/orders', async (req, res) => {
         const newOrder = {
             id: Date.now(),
             date: new Date().toISOString(),
+            status: 'Pending',
             ...req.body
         };
 
@@ -81,6 +92,29 @@ app.delete('/api/orders/:id', async (req, res) => {
     } catch (err) {
         console.error('Error deleting order:', err);
         res.status(500).json({ error: 'Failed to delete order' });
+    }
+});
+
+// Update order status
+app.put('/api/orders/:id/status', async (req, res) => {
+    try {
+        const targetId = String(req.params.id);
+        const { status } = req.body;
+        
+        let orders = await fs.readJson(ORDERS_FILE);
+        const orderIndex = orders.findIndex(order => String(order.id) === targetId);
+        
+        if (orderIndex === -1) {
+            return res.status(404).json({ error: 'Order not found' });
+        }
+
+        orders[orderIndex].status = status;
+        await fs.writeJson(ORDERS_FILE, orders, { spaces: 2 });
+        
+        res.json({ success: true, message: 'Order status updated successfully' });
+    } catch (err) {
+        console.error('Error updating order status:', err);
+        res.status(500).json({ error: 'Failed to update order status' });
     }
 });
 

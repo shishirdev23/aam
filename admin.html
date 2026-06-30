@@ -20,10 +20,22 @@
         </div>
     </nav>
 
-    <main class="admin-main container">
+    <main class="admin-main container" id="adminDashboard" style="display: none;">
         <header class="admin-header">
             <h1>অর্ডার <span>ম্যানেজমেন্ট</span></h1>
-            <button id="refreshOrdersBtn" class="btn btn-primary">রিফ্রেশ করুন</button>
+            <div class="header-actions" style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                <input type="text" id="searchInput" placeholder="নাম বা ফোন নম্বর খুঁজুন..." style="padding: 8px; border-radius: 5px; border: 1px solid #ddd;">
+                <select id="statusFilter" style="padding: 8px; border-radius: 5px; border: 1px solid #ddd;">
+                    <option value="All">সব স্ট্যাটাস</option>
+                    <option value="Pending">Pending (অপেক্ষমান)</option>
+                    <option value="Processing">Processing (প্রক্রিয়াধীন)</option>
+                    <option value="Shipped">Shipped (পাঠানো হয়েছে)</option>
+                    <option value="Delivered">Delivered (ডেলিভারি সম্পন্ন)</option>
+                </select>
+                <button id="exportCsvBtn" class="btn btn-secondary">এক্সপোর্ট CSV</button>
+                <button id="refreshOrdersBtn" class="btn btn-primary">রিফ্রেশ করুন</button>
+                <button id="logoutBtn" class="btn" style="background: #ff4d4d; color: white;">লগআউট</button>
+            </div>
         </header>
 
         <div class="admin-content card glass-effect">
@@ -48,6 +60,16 @@
             </div>
         </div>
     </main>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="login-modal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: flex; justify-content: center; align-items: center; z-index: 9999;">
+        <div class="login-box card glass-effect" style="padding: 30px; text-align: center; max-width: 400px; width: 90%;">
+            <h2 style="margin-bottom: 20px;">অ্যাডমিন লগইন</h2>
+            <input type="password" id="adminPassword" placeholder="পাসওয়ার্ড দিন" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 5px;">
+            <button id="loginSubmitBtn" class="btn btn-primary" style="width: 100%;">লগইন</button>
+            <p id="loginError" style="color: #ff4d4d; margin-top: 10px; display: none;">ভুল পাসওয়ার্ড!</p>
+        </div>
+    </div>
 
     <script src="./src/scripts/admin.js"></script>
 </body>
