@@ -396,11 +396,18 @@ body::after {
 }
 
 @media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100%;
+  }
   .nav-links {
     display: none; /* Will add mobile menu later */
   }
   .hero-text h1 {
     font-size: 36px;
+  }
+  .hero-btns {
+    flex-wrap: wrap;
   }
 }
 
