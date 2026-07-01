@@ -161,16 +161,8 @@ body::after {
 
 .logo-img {
   height: 60px;
-  width: 220px;
-  background: linear-gradient(90deg, #004d00, #ffb300); /* Deep green to deep yellow */
-  -webkit-mask-image: url('/src/assets/images/logo.png');
-  -webkit-mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: left center;
-  mask-image: url('/src/assets/images/logo.png');
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: left center;
+  width: auto;
+  object-fit: contain;
 }
 
 .logo span {
