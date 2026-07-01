@@ -13,7 +13,9 @@
 <body>
     <nav class="navbar glass-effect">
         <div class="container nav-content">
-            <a href="index.html" class="logo">🥭 পাহাড়ি <span>ঝুড়ি</span> - এডমিন</a>
+            <a href="index.html" class="logo">
+                <img src="/src/assets/images/logo.png" alt="পাহাড়ি ঝুড়ি" class="logo-img">
+            </a>
             <div class="admin-stats">
                 মোট অর্ডার: <span id="totalOrdersCount">০</span>
             </div>
@@ -32,7 +34,7 @@
                     <option value="Shipped">Shipped (পাঠানো হয়েছে)</option>
                     <option value="Delivered">Delivered (ডেলিভারি সম্পন্ন)</option>
                 </select>
-                <button id="exportCsvBtn" class="btn btn-secondary">এক্সপোর্ট CSV</button>
+                <button id="exportCsvBtn" class="btn" style="background: #2196F3; color: white; font-weight: 600;">এক্সপোর্ট CSV</button>
                 <button id="refreshOrdersBtn" class="btn btn-primary">রিফ্রেশ করুন</button>
                 <button id="logoutBtn" class="btn" style="background: #ff4d4d; color: white;">লগআউট</button>
             </div>

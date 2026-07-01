@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Authentication ---
     const checkAuth = () => {
-        const token = localStorage.getItem('adminToken');
+        const token = sessionStorage.getItem('adminToken');
         if (token === 'admin-token-101202') {
             loginModal.style.display = 'none';
             adminDashboard.style.display = 'block';
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             const data = await res.json();
             if (data.success) {
-                localStorage.setItem('adminToken', data.token);
+                sessionStorage.setItem('adminToken', data.token);
                 loginError.style.display = 'none';
                 checkAuth();
             } else {
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     logoutBtn.addEventListener('click', () => {
-        localStorage.removeItem('adminToken');
+        sessionStorage.removeItem('adminToken');
         adminPassword.value = '';
         checkAuth();
     });
@@ -96,8 +96,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const statusTerm = statusFilter.value;
 
         const filteredOrders = allOrders.filter(order => {
-            const matchSearch = (order.customer.name && order.customer.name.toLowerCase().includes(searchTerm)) || 
-                                (order.customer.phone && order.customer.phone.includes(searchTerm));
+            const matchSearch = (order.customer.name && String(order.customer.name).toLowerCase().includes(searchTerm)) || 
+                                (order.customer.phone && String(order.customer.phone).toLowerCase().includes(searchTerm));
             const matchStatus = statusTerm === 'All' || order.status === statusTerm || (statusTerm === 'Pending' && !order.status);
             return matchSearch && matchStatus;
         });
